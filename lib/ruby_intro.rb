@@ -52,11 +52,20 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  vowels = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]
+  if s[0] =~ /[[:alpha:]]/
+    if !(vowels.include? s[0])
+      return true
+    else 
+      return false
+    end
+  else 
+    return false 
+  end 
 end
 
 def binary_multiple_of_4? s
