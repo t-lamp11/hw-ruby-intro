@@ -28,7 +28,25 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  boolVal = false
+  if arr.empty?
+    return boolVal
+  elsif arr.count == 1
+    return boolVal
+  else
+    i = 0
+    j = 0
+    for i in 0 ... arr.size 
+       for j in 0 ... arr.size
+         if i != j
+           if (arr[i] + arr[j]) == n 
+             boolVal = true
+           end 
+         end 
+       end
+    end
+  end
+  return boolVal
 end
 
 # Part 2
