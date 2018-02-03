@@ -69,7 +69,13 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s == '' 
+    return false
+  elsif s.chars.all? {|c| c =~ /[01]/}
+    return (( s.to_i(base=2) % 4 ) == 0)  
+  else
+    return false
+  end
 end
 
 # Part 3
