@@ -89,9 +89,6 @@ class BookInStock
     unless isbn1 != ''
       raise ArgumentError.new("isbn must be a string")
     end 
-    unless  price1.is_a?(Float)
-      raise ArgumentError.new("price must be a float")
-    end
     if (price1 <= 0)
       raise ArgumentError.new("Price must be > 0")
     else 
@@ -115,5 +112,8 @@ class BookInStock
   def price=(flt)
     @price = flt
   end
-   
+  
+  def price_as_string
+    str = "$" + sprintf("%0.02f", @price)
+  end 
 end
