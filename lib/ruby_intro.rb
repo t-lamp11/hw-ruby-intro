@@ -81,5 +81,39 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+   
+  def initialize(isbn1, price1)
+    unless isbn1.is_a?(String)
+      raise ArgumentError.new("isbn must be a string")
+    end
+    unless isbn1 != ''
+      raise ArgumentError.new("isbn must be a string")
+    end 
+    unless  price1.is_a?(Float)
+      raise ArgumentError.new("price must be a float")
+    end
+    if (price1 <= 0)
+      raise ArgumentError.new("Price must be > 0")
+    else 
+      @isbn = isbn1
+      @price = price1
+    end 
+  end
+  
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(str)
+    @isbn = str
+  end
+
+  def price
+    @price
+  end
+   
+  def price=(flt)
+    @price = flt
+  end
+   
 end
